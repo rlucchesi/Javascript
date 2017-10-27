@@ -1,0 +1,45 @@
+<!DOCTTYPE html>
+<html>
+    <head>
+        <title>Top Racer</title>
+        <meta charset="UTF-8">
+        <script src="game.js" defer></script>
+		<style>
+            table, td, th {
+                border: 1px solid black;
+            }
+            #tableResults {
+                width: 600px;
+            }
+            #startButton {
+                margin: 10px 0px 0px 250px;
+            }
+           .renderStack {
+               position:  relative 
+            }
+           .rtx  {  border : 1px solid;
+                    position: absolute;
+                    left: 0px;
+                    top: 0px;
+            }
+        </style>
+    </head>
+    <body onload="race.onLoad();">
+        <h1>HTML Canvas Top Racer Game</h1>
+        <div class="renderStack">
+            <canvas class = "rtx" id="backCanvas" width = "800" height="500"></canvas>
+            <canvas class = "rtx" id="frontCanvas" width = "800" height="500"></canvas>
+            <canvas class = "rtx" id="frontCanvas2" width = "800" height="500" onclick="race.begin();"></canvas>
+        </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <input type="button" id="startButton" value="Start Game" onclick="race.begin();">
+        <input type="button" id="reloadButton" value="Reset Game" onclick="location.reload();">
+        <input type="button" id="playButton" value="Play/Pause Music" onclick="race.sound.musicToggle();">
+        <br>
+        <div>
+            <h3>Results:</h3>
+            <table id="tableResults">
+            </table>
+        </div>
+    </body>
+</html>
